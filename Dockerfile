@@ -14,4 +14,14 @@ RUN set -x \
     && apt clean \
     && apt autoclean
 
+
+# Add S6 Services
+ADD conf/ /
+
+# Fix Permissions
+RUN set -x \
+    && chmod +x /etc/cont-init.d/ -R \
+    && chmod +x /etc/periodic/ -R  \
+    && chmod +x /etc/s6/services/ -R 
+
 ENTRYPOINT ["/init"]
