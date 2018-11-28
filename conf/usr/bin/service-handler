@@ -4,7 +4,7 @@ NAME=$1
 EXEC=$2
 WAIT=$3
 
-while [ ! -f "/tmp/init.success" ];
+while [ ! -f "/tmp/init.start" ];
 do 
         sleep 0.2
 done
@@ -16,6 +16,28 @@ then
         sleep 0.2
     done 
 fi
-echo "[  Starting ] - $NAME"
-eval $EXEC
-echo "[  Stopped  ] - $NAME"
+
+echo "[ Starting   ] - $NAME"
+
+if [ -f "/tmp/init.end" ];
+then
+    RETRY=0
+    while [ 1 -eq 1 ];
+    do
+        if [ $RETRY -lt 10 ];
+        then
+            RETRY=$(($RETRY + 1))
+            eval $EXEC
+            sleep 2
+            echo "[ Restarting ] - $NAME"
+        else
+            break;
+        fi
+    done
+    echo "[ Fail       ] - $NAME"
+    pkill -u root
+else
+    eval $EXEC
+    echo "[ Restarting ] - $NAME"
+fi
+
