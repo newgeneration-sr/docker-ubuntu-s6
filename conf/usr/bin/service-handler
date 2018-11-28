@@ -4,6 +4,11 @@ NAME=$1
 EXEC=$2
 WAIT=$3
 
+while [ ! -f "/tmp/init.success" ];
+do 
+        sleep 0.2
+done
+
 if [ -n $WAIT ] && [ "x$WAIT" != "x" ];
 then
     while [ ! -f $WAIT ];
