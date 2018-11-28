@@ -1,3 +1,3 @@
 #!/bin/bash
 
-service-handler "CROD" "cron -f" "/tmp/init.success"
+service-handler "CROD" "cron -f"
