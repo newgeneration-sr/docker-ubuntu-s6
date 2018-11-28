@@ -1,0 +1,8 @@
+#!/bin/bash
+
+apt clean
+apt autoclean 
+rm /var/lib/apt/lists/
+rm /var/lib/apt/lists/partial/
+
+exit 0 
