@@ -26,6 +26,7 @@ ADD conf/ /
 # Fix Permissions
 RUN set -x \
     && chmod +x /usr/bin/apt-clean \
+    && chmod +x /usr/bin/service-handler \
     && chmod +x /etc/cont-init.d/ -R \
     && chmod +x /etc/s6/services/ -R 
 
