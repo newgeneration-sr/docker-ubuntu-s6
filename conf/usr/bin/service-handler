@@ -1,0 +1,16 @@
+#!/bin/bash
+
+NAME=$1
+EXEC=$2
+WAIT=$3
+
+if [ -n $WAIT ] && [ "x$WAIT" != "x" ];
+then
+    while [ ! -f $WAIT ];
+    do
+        sleep 0.2
+    done 
+fi
+echo "[  Starting ] - $NAME"
+eval $EXEC
+echo "[  Stopped  ] - $NAME"
