@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:19.04
 
 ARG S6_OVERLAY_VERSION=1.21.7.0
 # Install S6 Overlay
