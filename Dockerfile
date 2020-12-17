@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 ENV S6_OVERLAY_VERSION=v2.1.0.2
 # Install S6 Overlay
