@@ -1,6 +1,6 @@
 ![docker build automated](https://img.shields.io/docker/cloud/automated/dotriver/ubuntu-s6)
 ![docker build status](https://img.shields.io/docker/cloud/build/dotriver/ubuntu-s6)
-![docker build status](https://img.shields.io/docker/cloud/pulls/dotriver/ubuntu-s6)
+![docker build status](https://img.shields.io/docker/pulls/dotriver/ubuntu-s6)
 
 # Ubuntu + Overlay S6
 
